@@ -1,0 +1,245 @@
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    background: linear-gradient(270deg, #052e4c, #020304);
+    
+}
+
+/* Estilos generales para la barra de navegación */
+.navbar {
+    background: linear-gradient(270deg, #052e4c, #020304);
+    padding: 10px 0; /* Espacio interno */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para el logotipo */
+.logo-nav {
+    width: 100px;
+    height: 60px;
+}
+
+/* Estilos para el botón de hamburguesa */
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+
+.navbar-toggler-icon {
+    background: linear-gradient(270deg, #052e4c, #020304);
+    width: 30px;
+    height: 3px;
+    display: block;
+    border-radius: 3px;
+}
+
+/* Estilos para la lista de navegación en pantalla grande */
+.navbar-menu {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-menu ul li {
+    margin: 0 15px; /* Espacio entre elementos de navegación */
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+    color: #2a325f; /* Cambia de color al pasar el mouse */
+}
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url("../../images/ico/campo1.jpg");
+    background-size: cover;
+    background-position: center center;
+    color: #ffffff;
+}
+
+/* Estilos para el texto */
+.hero h1 {
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    z-index: 4; /* Coloca el texto encima de la imagen */
+}
+
+/* Estilos para el botón */
+.cta-button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 4; /* Coloca el botón encima de la imagen */
+}
+
+/* Superposición de color negro con opacidad */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0; /* Asegura que la superposición esté detrás del texto y el botón */
+}
+
+.cta-button:hover{
+    position: relative;
+    background: linear-gradient(270deg, #052e4c, #273b4e);
+}
+.counter-section{
+    color: white;
+}
+
+.counters {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f0f0f0;
+}
+
+.counter-item {
+    margin: 0 20px;
+}
+
+.donate {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.donate h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.contact {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f0f0f0;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+    background-color: #f0f0f0;/* Ajusta la altura según tus necesidades */
+}
+
+#carouselExampleDark {
+    max-width: 120%;
+    max-height: 120%;
+}
+/* Estilos para el footer */
+footer {
+    background: linear-gradient(270deg, #052e4c, #020304);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Estilos para la sección de redes sociales */
+footer .social-icons {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+footer .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+footer .social-icons a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #00bcd4;
+}
+
+/* Estilos para la animación del texto de derechos de autor */
+footer p {
+    margin: 10px 0;
+    animation: fadeInUp 1s ease;
+}
+
+/* Estilos para centrar el footer en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Estilos para el menú de hamburguesa en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: linear-gradient(270deg, #052e4c, #020304);
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .navbar-menu.show-menu {
+        display: flex;
+    }
+
+    .navbar-menu ul li {
+        margin: 15px 0; /* Espacio entre elementos de navegación */
+    }
+}
+
+
+
+

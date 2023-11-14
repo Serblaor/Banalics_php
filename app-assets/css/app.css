@@ -286,7 +286,7 @@ footer.footer-dark {
     .main-menu.menu-dark .main-menu-header {
       padding: 20px; }
       .main-menu.menu-dark .main-menu-header .menu-search {
-        background-color: #052e4c;
+        background: linear-gradient(270deg, #052e4c,#020304); 
         padding: 0.5rem 1rem;
         color: #c3c3c3; }
         .main-menu.menu-dark .main-menu-header .menu-search:focus {

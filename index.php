@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
     <link rel="stylesheet" href="app-assets/css/Login.css">
     <!-- END ROBUST CSS-->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <style>
@@ -180,7 +181,7 @@
 	text-align: center;
 	bottom: 0px;
 	right: 0px;
-	color:#7875B5;
+	color:white;
 }
 
 .social-icons {
@@ -191,7 +192,7 @@
 
 .social-login__icon {
 	padding: 20px 10px;
-	color:#7875B5;
+	color:#fff;
 	text-decoration: none;	
 	text-shadow: 0px 0px 8px #7875B5;
 }
@@ -207,7 +208,7 @@
 .registrar{
   position: absolute;
 	
-	width: 200px;
+	width: 100px;
 	text-align: left;
 	bottom: 150px;
 	left: 25px;
@@ -258,29 +259,42 @@
 	</div>
 </div>
 <script>
-    function validarFormulario() {
-        var email = document.getElementById("Email").value;
-        var contrasena = document.getElementById("Contraseña").value;
+  function validarFormulario() {
+    var email = document.getElementById("Email").value;
+    var contrasena = document.getElementById("Contraseña").value;
 
-        if (email.trim() === '' || contrasena.trim() === '') {
-            alert("Por favor, complete todos los campos.");
-            return false;
-        }
-
-        // Verificar si el campo de correo contiene un "@".
-        if (email.indexOf('@') === -1) {
-            alert("El campo de correo debe contener un '@'.");
-            return false;
-        }
-
-        // Verificar si la contraseña tiene al menos 5 caracteres.
-        if (contrasena.length < 5) {
-            alert("La contraseña debe tener al menos 5 caracteres.");
-            return false;
-        }
-
-        return true;
+    if (email.trim() === '' || contrasena.trim() === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Campos Vacíos',
+            text: 'Por favor, complete todos los campos.',
+        });
+        return false;
     }
+
+    // Verificar si el campo de correo contiene un "@".
+    if (email.indexOf('@') === -1) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Correo Inválido',
+            text: 'El campo de correo debe contener un \'@\'.',
+        });
+        return false;
+    }
+
+    // Verificar si la contraseña tiene al menos 5 caracteres.
+    if (contrasena.length < 5) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Contraseña Corta',
+            text: 'La contraseña debe tener al menos 5 caracteres.',
+        });
+        return false;
+    }
+
+    return true;
+}
+
 </script>
 
   </body>
