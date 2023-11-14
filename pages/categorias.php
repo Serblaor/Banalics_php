@@ -12,7 +12,7 @@
 			<div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
 				<div class="breadcrumb-wrapper col-xs-12">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../main">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="../welcome.php">Dashboard</a></li>
 						<li class="breadcrumb-item"><a >Productos</a></li>
 						<li class="breadcrumb-item active"><a href="#">Categorias</a></li>
 					</ol>

@@ -1,0 +1,45 @@
+/* Agrega un estilo específico para el contenido de la página */
+.app-content {
+    padding: 20px; /* Ajusta según sea necesario */
+}
+
+/* Hace que la tabla sea responsive */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Ajusta el estilo de la tabla */
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    font-size: 14px; /* Ajusta según sea necesario */
+}
+
+/* Estilo para las celdas de encabezado */
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Estilo para las celdas de datos */
+.table tbody td {
+    vertical-align: middle;
+}
+
+/* Ajusta los estilos de los botones de acciones */
+.btn {
+    margin-right: 5px; /* Ajusta según sea necesario */
+}
+
+/* Ajusta el estilo de los botones según su tamaño */
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px; /* Ajusta según sea necesario */
+}
+
+/* Estilo para el color de fondo de las filas alternas */
+.table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Ajusta según sea necesario */
+}

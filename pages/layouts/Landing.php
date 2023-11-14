@@ -46,7 +46,7 @@
                 <a class="nav-link" href="#"><i class="fas fa-handshake"></i>Alianzas</a>
             </li>
             <li class="nav-item" runat="server" id="liLogin">
-                <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i>Login/Registro</a>
+                <a class="nav-link" href="../../index.php"><i class="fas fa-sign-in-alt"></i>Login/Registro</a>
             </li>
             <li class="nav-item" runat="server" id="liProductos">
                 <a class="nav-link" href="Productos.aspx"><i class="fas fa-store"></i>Productos</a>

@@ -18,7 +18,7 @@
               <li class="dropdown dropdown-notification nav-item"><a href="#" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon icon-mail6"></i><span class="tag tag-pill tag-default tag-info tag-default tag-up"></span></a></li>
               <li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></span><span class="user-name"></span></a>
                 <div class="dropdown-menu dropdown-menu-right">
-                  <div class="dropdown-divider"></div><a href="../index.php" class="dropdown-item"><i class="icon-power3"></i>Cerrar sesión</a>
+                  <div class="dropdown-divider"></div><a href="layouts/Landing.php" class="dropdown-item"><i class="icon-power3"></i>Cerrar sesión</a>
                 </div>
               </li>
             </ul>
