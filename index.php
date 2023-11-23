@@ -222,7 +222,7 @@
   <div class="container">
 	<div class="screen">
 		<div class="screen__content">
-    <div class="img"> 
+    <div class="img">
     <img src="app-assets/images/ico/LogoBanalics.png" alt="" >
   </div>
   <form class="login" method="post" action="procesar_formulario.php" onsubmit="return validarFormulario()">

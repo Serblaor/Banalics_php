@@ -6,7 +6,6 @@ class Conexion
     private $username = "root";
     private $password = "";
     private $dbname = "alimentos";
-
     public function ConectarDB()
     {
         try {

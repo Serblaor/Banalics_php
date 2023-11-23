@@ -14,7 +14,6 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="../welcome.php">Dashboard</a></li>
                         <li class="breadcrumb-item"><a>Productos</a></li>
-                        <li class="breadcrumb-item active"><a href="#">Categorias</a></li>
                     </ol>
                 </div>
             </div>
@@ -25,7 +24,9 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title" id="basic-layout-form"><button class="btn btn-sm btn-success">Nuevo producto</button></h4>
+                                <h4 class="card-title" id="basic-layout-form">
+                                    <a href="nuevo_producto.php" class="btn btn-sm btn-success">Nuevo producto</a>
+                                </h4>
                                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
@@ -81,7 +82,7 @@
                                                 ?>
                                             </tbody>
                                             <tfoot>
-                                                
+
                                             </tfoot>
                                         </table>
                                     </div>

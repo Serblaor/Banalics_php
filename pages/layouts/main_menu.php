@@ -26,15 +26,11 @@
           </li>
           <li class=" nav-item"><a href="#"><i class="icon-dropbox"></i><span class="menu-title">Productos</span></a>
             <ul class="menu-content">
-              <li><a href="#" class="menu-item">Nuevo producto</a></li>
               <li><a href="Productos.php" class="menu-item">Lista de productos</a></li>
-              <li><a href="#" class="menu-item">Categorias</a></li>
-              <li><a href="#" class="menu-item">Sub categorias</a></li>
             </ul>
           </li>
           <li class=" nav-item"><a href="#"><i class="icon-briefcase4"></i><span class="menu-title">Donaciones</span></a>
             <ul class="menu-content">
-              <li><a href="#" class="menu-item">Realizar venta</a></li>
               <li><a href="#" class="menu-item">Lista de donacioens</a></li>
             </ul>
           </li>
