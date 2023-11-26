@@ -1,301 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Robust admin is super flexible, powerful, clean & modern responsive bootstrap 4 admin template with unlimited possibilities.">
-    <meta name="keywords" content="admin template, robust admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="PIXINVENT">
-    <title>BANALICS</title>
-    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/LogoBanalics.png">
-    <link rel="shortcut icon" type="image/png" href="app-assets/images/ico/LogoBanalics.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
-    <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
-    <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="app-assets/fonts/icomoon.css">
-    <!-- BEGIN ROBUST CSS-->
-    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
-    <link rel="stylesheet" href="app-assets/css/Login.css">
-    <!-- END ROBUST CSS-->
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <style>
-      body {
-        background-image: url('app-assets/images/ico/Campo1.jpg');
-        background-size: cover;
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-      .container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Banalics - Ayuda Alimentaria</title>
+	<link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/LogoBanalics.png">
+	<link rel="shortcut icon" type="image/png" href="app-assets/images/ico/LogoBanalics.png">
+	<link rel="stylesheet" href="app-assets/css/pages/landing.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+		integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
 
-.screen {		
-	background: linear-gradient(90deg, #de0051, #0062a9);		
-	position: relative;	
-	height: 600px;
-	width: 360px;	
-	box-shadow: 0px 0px 24px #5C5696;
-}
+</head>
 
+<body>
+<?php include "pages/layouts/navUser.php"; ?>
 
-.screen__content {
-	z-index: 1;
-	position: relative;	
-	height: 100%;
-}
+	<!-- Hero Section -->
+	<section class="hero">
+		<h1>Bienvenido a Banalics</h1>
+		<p>Brindando ayuda alimentaria a quienes más lo necesitan.</p>
+		<a href="#donate" class="cta-button">¡Donar Ahora!</a>
+	</section>
 
-.screen__background {		
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 0;
-	-webkit-clip-path: inset(0 0 0 0);
-	clip-path: inset(0 0 0 0);	
-}
+	<!-- Slider de Bootstrap -->
+	<div class="slider-container">
+		<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+			<!-- Indicadores -->
+			<ol class="carousel-indicators">
+				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
+				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="3"></li>
+			</ol>
 
-.screen__background__shape {
-	transform: rotate(45deg);
-	position: absolute;
-}
+			<!-- Bootstrap Carousel -->
+			<div id="features" class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="app-assets/images/carousel/Banco1.jpg" class="d-block w-90" alt="Slide 1">
+				</div>
+				<div class="carousel-item">
+					<img src="app-assets/images/carousel/Banco2.jpg" class="d-block w-90" alt="Slide 2">
+				</div>
+				<div class="carousel-item">
+					<img src="app-assets/images/carousel/Banco3.jfif" class="d-block w-90" alt="Slide 3">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<!-- Nosotros -->
+	<section class="about-us">
+		<div class="container">
+			<h2>Nosotros</h2>
+			<p>Texto descriptivo sobre quiénes somos y nuestra misión.</p>
+			<!-- Puedes agregar más contenido según sea necesario -->
+		</div>
+	</section>
 
-.screen__background__shape1 {
-	height: 520px;
-	width: 520px;
-	background: #f2f2f2;	
-	top: -40px;
-	right: 120px;	
-	border-radius: 0 72px 0 0;
-}
-
-.screen__background__shape2 {
-	height: 220px;
-	width: 220px;
-	background: #0062a9;	
-	top: -172px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape3 {
-	height: 540px;
-	width: 190px;
-	background: linear-gradient(270deg,#004c95, #0062a9,#0079bd, #c80041, #de0051, #f30061);
-	top: -24px;
-	right: 0;	
-	border-radius: 32px;
-}
-
-.screen__background__shape4 {
-	height: 400px;
-	width: 200px;
-	background: linear-gradient(290deg,#004c95, ,#0079bd, #c80041);
-	top: 420px;
-	right: 50px;	
-	border-radius: 60px;
-}
-
-.login {
-	width: 320px;
-	padding: 30px;
-	padding-top: 50px;
-}
-
-.login__field {
-	padding: 20px 0px;	
-	position: relative;	
-}
-
-.login__icon {
-	position: absolute;
-	top: 30px;
-	color:  #0062a9;
-}
-
-.login__input {
-	border: none;
-	border-bottom: 2px solid #D1D1D4;
-	background: none;
-	padding: 5px;
-	padding-left: 24px;
-	font-weight: 700;
-	width: 80%;
-	transition: .2s;
-}
-
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
-	outline: none;
-	border-bottom-color: #6A679E;
-}
-
-.login__submit {
-	background: #fff;
-	font-size: 14px;
-	margin-top: 30px;
-	padding: 16px 20px;
-	border-radius: 26px;
-	border: 1px solid #D4D3E8;
-	text-transform: uppercase;
-	font-weight: 700;
-	display: flex;
-	align-items: center;
-	width: 100%;
-	color: #0062a9;
-	box-shadow: 0px 2px 2px #5C5696;
-	cursor: pointer;
-	transition: .2s;
-}
-
-.login__submit:active,
-.login__submit:focus,
-.login__submit:hover {
-	border-color: #6A679E;
-	outline: none;
-}
-
-.button__icon {
-	font-size: 24px;
-	margin-left: auto;
-	color: #7875B5;
-}
-
-.social-login {	
-	position: absolute;
-	height: 140px;
-	width: 160px;
-	text-align: center;
-	bottom: 0px;
-	right: 0px;
-	color:white;
-}
-
-.social-icons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.social-login__icon {
-	padding: 20px 10px;
-	color:#fff;
-	text-decoration: none;	
-	text-shadow: 0px 0px 8px #7875B5;
-}
-
-.social-login__icon:hover {
-	transform: scale(1.5);	
-  
-}
-.img img{
-  width: 150px;
-  margin-top: 10px;
-}
-.registrar{
-  position: absolute;
-	
-	width: 100px;
-	text-align: left;
-	bottom: 150px;
-	left: 25px;
-  z-index: 2;
-	
-}
-
-    </style>
-  </head>
-  <body>
-  <div class="container">
-	<div class="screen">
-		<div class="screen__content">
-    <div class="img">
-    <img src="app-assets/images/ico/LogoBanalics.png" alt="" >
-  </div>
-  <form class="login" method="post" action="procesar_formulario.php" onsubmit="return validarFormulario()">
-        <div class="login__field">
-            <i class="login__icon fas fa-user"></i>
-            <input type="text" class="login__input" placeholder="Email" name="Email" id="Email">
-        </div>
-        <div class="login__field">
-            <i class="login__icon fas fa-lock"></i>
-            <input type="password" class="login__input" placeholder="Contraseña" name="Contraseña" id="Contraseña">
-        </div>
-        <button class="button login__submit" type="submit">
-            <span class="button__text">Iniciar Sesión</span>
-            <i class="button__icon fas fa-chevron-right"></i>
-        </button>
-    </form>
-</form>
-			<div class="social-login">
-				<h3>Inicia sesión con:</h3>
-				<div class="social-icons">
-					<a href="#" class="social-login__icon fab fa-instagram"></a>
-					<a href="#" class="social-login__icon fab fa-facebook"></a>
-					<a href="#" class="social-login__icon fab fa-twitter"></a>
+	<!-- Contador -->
+	<section class="counter-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-6">
+					<div class="counter">
+						<i class="fas fa-users"></i>
+						<h2><span id="counter1">0</span>+</h2>
+						<p>Personas Alcanzadas</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="counter">
+						<i class="fas fa-hands-helping"></i>
+						<h2><span id="counter2">0</span>+</h2>
+						<p>Personas Ayudadas</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="counter">
+						<i class="fas fa-smile"></i>
+						<h2><span id="counter3">0</span>+</h2>
+						<p>Personas Satisfechas</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-sm-6">
+					<div class="counter">
+						<i class="fas fa-heart"></i>
+						<h2><span id="counter4">0</span>+</h2>
+						<p>Personas Inspiradas</p>
+					</div>
 				</div>
 			</div>
 		</div>
-    <div class="registrar">¿No tienes una cuenta ? <a href="#">¡Registrate!</a></div>
-		<div class="screen__background">
-			<span class="screen__background__shape screen__background__shape4"></span>
-			<span class="screen__background__shape screen__background__shape3"></span>		
-			<span class="screen__background__shape screen__background__shape2"></span>
-			<span class="screen__background__shape screen__background__shape1"></span>
-		</div>		
-	</div>
-</div>
-<script>
-  function validarFormulario() {
-    var email = document.getElementById("Email").value;
-    var contrasena = document.getElementById("Contraseña").value;
+	</section>
 
-    if (email.trim() === '' || contrasena.trim() === '') {
-        Swal.fire({
-            icon: 'error',
-            title: 'Campos Vacíos',
-            text: 'Por favor, complete todos los campos.',
-        });
-        return false;
-    }
+	<!-- Sección de Donaciones -->
+	<section class="donate" id="donate">
+		<h2>Haz la Diferencia</h2>
+		<p>Tu contribución puede cambiar vidas. ¡Dona hoy!</p>
+		<a href="#contact" class="cta-button">Contacto</a>
+	</section>
+	<!-- Nuestros Donantes -->
+	<section class="our-donors">
+		<div class="container">
+			<h2>Nuestros Donantes</h2>
+			<p>Gracias a nuestros generosos donantes, podemos hacer la diferencia. ¡Únete a ellos!</p>
+			<!-- Puedes agregar más contenido según sea necesario -->
+		</div>
+	</section>
+	<!-- Testimonios -->
+	<section class="testimonials">
+		<div class="container">
+			<h2>Testimonios</h2>
+			<div class="testimonial-item">
+				<p>Texto del testimonio...</p>
+				<p class="author">Nombre del autor</p>
+			</div>
+			<!-- Puedes agregar más testimonios según sea necesario -->
+		</div>
+	</section>
 
-    // Verificar si el campo de correo contiene un "@".
-    if (email.indexOf('@') === -1) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Correo Inválido',
-            text: 'El campo de correo debe contener un \'@\'.',
-        });
-        return false;
-    }
 
-    // Verificar si la contraseña tiene al menos 5 caracteres.
-    if (contrasena.length < 5) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Contraseña Corta',
-            text: 'La contraseña debe tener al menos 5 caracteres.',
-        });
-        return false;
-    }
+	<!-- Sección de Contacto -->
+	<section class="contact" id="contact">
+		<h2>Contacto</h2>
+		<p>¿Tienes preguntas o comentarios? ¡Contáctanos!</p>
+		<!-- Agrega un formulario de contacto aquí -->
+	</section>
 
-    return true;
-}
+	<!-- Footer -->
+	<footer>
+		<div class="col-md-12">
+			<h5 class="text-uppercase text-light">Síguenos en redes sociales</h5>
+			<ul class="list-inline social-icons mt-3">
+				<li class="list-inline-item">
+					<a href="#" target="_blank"><i class="fab fa-facebook-f" style="color: aliceblue;"></i></a>
+				</li>
+				<li class="list-inline-item">
+					<a href="#" target="_blank"><i class="fab fa-twitter" style="color: aliceblue;"></i></a>
+				</li>
+				<li class="list-inline-item">
+					<a href="#" target="_blank"><i class="fab fa-instagram" style="color: aliceblue;"></i></a>
+				</li>
+				<li class="list-inline-item">
+					<a href="#" target="_blank"><i class="fab fa-linkedin-in" style="color: aliceblue;"></i></a>
+				</li>
+			</ul>
+		</div>
+		<p>&copy; 2023 Banalics - Ayuda Alimentaria</p>
+	</footer>
 
-</script>
+	<script>
+		// Función para animar los contadores
+		function animateCounter(elementId, targetValue, duration) {
+			let current = 0;
+			const element = document.getElementById(elementId);
+			const step = Math.ceil(targetValue / duration);
 
-  </body>
+			const timer = setInterval(() => {
+				current += step;
+				element.textContent = current;
+
+				if (current >= targetValue) {
+					clearInterval(timer);
+					element.textContent = targetValue;
+				}
+			}, 10);
+		}
+
+		// Llamadas a la función animateCounter con los valores deseados
+		animateCounter('counter1', 1500, 2000); // Personas Alcanzadas
+		animateCounter('counter2', 1000, 2500); // Personas Ayudadas
+		animateCounter('counter3', 800, 3000); // Personas Satisfechas
+		animateCounter('counter4', 1200, 2200); // Personas Inspiradas
+
+		const btnMenu = document.getElementById('btn-menu');
+		const navbarMenu = document.querySelector('.navbar-menu');
+
+		btnMenu.addEventListener('click', () => {
+			if (navbarMenu) {
+				navbarMenu.classList.toggle('show-menu');
+			}
+		});
+
+
+	</script>
+
+
+</body>
+
 </html>
