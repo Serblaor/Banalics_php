@@ -149,18 +149,45 @@ body {
     margin-bottom: 20px;
 }
 
+.about-us {
+    color: rgb(0, 0, 0);
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.about-content {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
 .slider-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; 
-    background-color: #f0f0f0;/* Ajusta la altura según tus necesidades */
+    height: 55vh;
+    background-color: #ffffff;
+    overflow: hidden;
+     /* Para evitar que las imágenes se desborden del contenedor */
 }
 
 #carouselExampleDark {
-    max-width: 120%;
-    max-height: 120%;
+    max-width: 100%;
+    max-height: 100%;
 }
+
 /* Estilos para el footer */
 footer {
     background: linear-gradient(270deg, #052e4c, #020304);
@@ -201,6 +228,19 @@ footer p {
 @media screen and (max-width: 768px) {
     footer {
         text-align: center;
+    }
+    .container {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas más pequeñas */
+        align-items: center; /* Centra los elementos en pantallas más pequeñas */
+    }
+
+    .about-content {
+        max-width: 100%; /* Opcional: Hace que el texto ocupe el ancho completo */
+        text-align: left; /* Alinea el texto a la izquierda en pantallas más pequeñas */
+    }
+
+    .slider-container {
+        height: auto; /* Ajusta la altura automáticamente en pantallas más pequeñas */
     }
 }
 

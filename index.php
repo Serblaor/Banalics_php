@@ -28,47 +28,66 @@
 		<a href="#donate" class="cta-button">¡Donar Ahora!</a>
 	</section>
 
-	<!-- Slider de Bootstrap -->
-	<div class="slider-container">
-		<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-			<!-- Indicadores -->
-			<ol class="carousel-indicators">
-				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
-				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
-				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
-				<li data-bs-target="#carouselExampleDark" data-bs-slide-to="3"></li>
-			</ol>
-
-			<!-- Bootstrap Carousel -->
-			<div id="features" class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="app-assets/images/carousel/Banco1.jpg" class="d-block w-90" alt="Slide 1">
-				</div>
-				<div class="carousel-item">
-					<img src="app-assets/images/carousel/Banco2.jpg" class="d-block w-90" alt="Slide 2">
-				</div>
-				<div class="carousel-item">
-					<img src="app-assets/images/carousel/Banco3.jfif" class="d-block w-90" alt="Slide 3">
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
+	
 	<!-- Nosotros -->
-	<section class="about-us">
-		<div class="container">
-			<h2>Nosotros</h2>
-			<p>Texto descriptivo sobre quiénes somos y nuestra misión.</p>
-			<!-- Puedes agregar más contenido según sea necesario -->
-		</div>
-	</section>
+<section class="about-us">
+    <div class="container">
+        <div class="about-content">
+            <h2>Nosotros</h2>
+            <p>
+                Texto descriptivo sobre quiénes somos y nuestra misión.
+                ¿Qué hace el Banco de Alimentos?
+                Somos un articulador de los esfuerzos de la empresa privada, la academia y organizaciones sin ánimo de lucro,
+                que trabaja para ayudar a poblaciones en condiciones de vulnerabilidad que sufren de inseguridad alimentaria y desnutrición.
+                Recibimos donaciones en forma de alimentos y bienes, los clasificamos, almacenamos y distribuimos de manera responsable,
+                eficiente y equitativa. Cumplimos 20 años y gracias a la generosidad de miles de personas nos hemos convertido en uno de
+                los referentes más importantes en seguridad alimentaria y la lucha contra el desperdicio del país. En medio de una de las
+                crisis sanitarias más desafiantes a nivel mundial, en nuestro Vigésimo Aniversario contabilizamos más de 228 millones de
+                kilos de alimentos entregados, superando todas las expectativas y a la vez alcanzando más claros y eficientes procesos,
+                siempre garantizando a nuestros donantes un manejo impecable y responsable de los recursos.
+                Promovemos el consumo de alimentos sanos y saludables, entregando mercados balanceados y en óptimas condiciones,
+                contribuyendo así a la seguridad alimentaria y nutricional de nuestros beneficiados. No solo entregamos alimentos,
+                sino también esperanza y trabajamos para desarrollar las competencias y habilidades de las organizaciones vinculadas,
+                encaminados en construir una sociedad más humana, solidaria y equitativa.
+            </p>
+        </div>
+
+        <!-- Slider de Bootstrap -->
+        <div class="slider-container">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+                    <li data-bs-target="#carouselExampleDark" data-bs-slide-to="3"></li>
+                </ol>
+
+                <!-- Bootstrap Carousel -->
+                <div id="features" class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="app-assets/images/carousel/Banco1.jpg" class="d-block w-90" alt="Slide 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="app-assets/images/carousel/Banco2.jpg" class="d-block w-90" alt="Slide 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="app-assets/images/carousel/Banco3.jfif" class="d-block w-90" alt="Slide 3">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 	<!-- Contador -->
 	<section class="counter-section">
