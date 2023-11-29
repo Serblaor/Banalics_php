@@ -12,22 +12,14 @@ if (!isset($_SESSION['idUsuario'])) {
 $imagenUsuario = $_SESSION['imgUsuario'];
 $nombreUsuario = $_SESSION['nombresUsuario'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Otras etiquetas head... -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- Otras etiquetas head... -->
 </head>
 
 <body>
-
-</body>
-
-</html>
-
 <nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
   <div class="navbar-wrapper">
     <div class="navbar-header">
@@ -81,3 +73,8 @@ $nombreUsuario = $_SESSION['nombresUsuario'];
     </div>
   </div>
 </nav>
+
+</body>
+
+</html>
+

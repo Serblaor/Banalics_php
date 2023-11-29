@@ -51,3 +51,5 @@
       include "main_menu.php";
       /*==== =====================*/
    ?>
+    </body>
+</html>

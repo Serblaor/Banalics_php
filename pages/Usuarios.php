@@ -1,10 +1,9 @@
+<?php include "layouts/head.php"; ?>
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../../../css/pages/usuarios.css">
     <style>
         /* Agrega un estilo específico para el contenido de la página */
@@ -59,11 +58,9 @@
         }
     </style>
 </head>
-
 <body>
-    <?php
+<?php
     require_once "../config/Conexion.php";
-
     function getUsuarios()
     {
         $conexion = new Conexion();
@@ -83,20 +80,11 @@
                 $usuarios[] = $row;
             }
         }
-
         $conn->close();
-
         return $usuarios;
     }
-
     ?>
-
-    <!-- Aquí comienza el HTML -->
-    <?php include "layouts/head.php"; ?>
-
     <div class="app-content content container-fluid">
-        <!-- Contenido del cuerpo de la página -->
-
         <table class="table table-bordered table-sm">
             <thead>
                 <tr>
@@ -115,7 +103,6 @@
             <tbody>
                 <?php
                 $usuarios = getUsuarios();
-
                 foreach ($usuarios as $usuario) {
                     echo "<tr>";
                     echo "<td>{$usuario['idUsuario']}</td>";
@@ -131,17 +118,14 @@
                         <button class='btn btn-sm btn-info' onclick='editarUsuario({$usuario['idUsuario']})'>Editar</button>
                         <button class='btn btn-sm btn-danger' onclick='eliminarUsuario({$usuario['idUsuario']})'>Eliminar</button>
                         <button class='btn btn-sm btn-warning' onclick='deshabilitarUsuario({$usuario['idUsuario']})'>Deshabilitar</button>
-                      </td>";
+                        </td>";
                     echo "</tr>";
                 }
                 ?>
             </tbody>
         </table>
     </div>
-
-    <?php include "layouts/main_scripts.php"; ?>
-    <?php include "layouts/footer.php"; ?>
-
 </body>
-
 </html>
+<?php include "layouts/main_scripts.php"; ?>
+<?php include "layouts/footer.php"; ?>
