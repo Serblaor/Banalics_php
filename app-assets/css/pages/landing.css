@@ -1,286 +1,488 @@
-
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    scroll-behavior: smooth;
-    background: linear-gradient(270deg, #052e4c, #020304);
-    
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(270deg, #052e4c, #020304);
 }
 
 /* Estilos generales para la barra de navegación */
 .navbar {
-    background: linear-gradient(270deg, #052e4c, #020304);
-    padding: 10px 0; /* Espacio interno */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: linear-gradient(270deg, #052e4c, #020304);
+  padding: 10px 0; /* Espacio interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Estilos para el logotipo */
 .logo-nav {
-    width: 100px;
-    height: 60px;
+  width: 100px;
+  height: 60px;
 }
 
 /* Estilos para el botón de hamburguesa */
 .navbar-toggler {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
 }
 
 .navbar-toggler-icon {
-    background: linear-gradient(270deg, #052e4c, #020304);
-    width: 30px;
-    height: 3px;
-    display: block;
-    border-radius: 3px;
+  background: linear-gradient(270deg, #052e4c, #020304);
+  width: 30px;
+  height: 3px;
+  display: block;
+  border-radius: 3px;
 }
 
 /* Estilos para la lista de navegación en pantalla grande */
 .navbar-menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .navbar-menu ul li {
-    margin: 0 15px; /* Espacio entre elementos de navegación */
+  margin: 0 15px; /* Espacio entre elementos de navegación */
 }
 
 .navbar-link {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 .navbar-link:hover {
-    color: #2a325f; /* Cambia de color al pasar el mouse */
+  color: #2a325f; /* Cambia de color al pasar el mouse */
 }
 .hero {
-    position: relative;
-    text-align: center;
-    padding: 100px 20px;
-    background-image: url("../../images/ico/campo1.jpg");
-    background-size: cover;
-    background-position: center center;
-    color: #ffffff;
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url("../../images/ico/campo1.jpg");
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
 }
 
 /* Estilos para el texto */
 .hero h1 {
-    position: relative;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    z-index: 4; /* Coloca el texto encima de la imagen */
+  position: relative;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  z-index: 4; /* Coloca el texto encima de la imagen */
 }
 
 /* Estilos para el botón */
 .cta-button {
-    position: relative;
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    z-index: 4; /* Coloca el botón encima de la imagen */
+  position: relative;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 4; /* Coloca el botón encima de la imagen */
 }
 
 /* Superposición de color negro con opacidad */
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 0; /* Asegura que la superposición esté detrás del texto y el botón */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Asegura que la superposición esté detrás del texto y el botón */
 }
 
-.cta-button:hover{
-    position: relative;
-    background: linear-gradient(270deg, #052e4c, #273b4e);
+.cta-button:hover {
+  position: relative;
+  background: linear-gradient(270deg, #052e4c, #273b4e);
 }
-.counter-section{
-    color: white;
+.counter-section {
+  color: white;
+  background-color: #6e6e6e;
+  padding: 45px 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .counters {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f0f0f0;
+  display: flex;
+  flex-wrap: wrap; /* Asegura que los contadores se envuelvan en dispositivos más pequeños */
 }
 
 .counter-item {
-    margin: 0 20px;
+  flex: 0 0 50%; /* Ajusta el ancho de cada contador para que ocupe casi el 25% del ancho del contenedor padre */
+  margin: 20px 0;
 }
 
+.counter i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  margin-right: 15rem;
+  display: block; /* Asegura que los iconos estén en una línea separada */
+}
 .donate {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #333;
-    color: white;
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(300deg, #052e4c, #273b4e);
+  color: white;
 }
 
 .donate h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .contact {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #f0f0f0;
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #f0f0f0;
 }
 
 .contact h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .about-us {
-    color: rgb(0, 0, 0);
-    padding: 50px 20px;
-    background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 50px 20px;
+  background-color: #ffffff;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 .about-content {
-    max-width: 800px;
-    text-align: center;
-    margin-bottom: 50px;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .about-content p {
-    margin-bottom: 20px;
-    text-align: justify;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 .slider-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 55vh;
-    background-color: #ffffff;
-    overflow: hidden;
-     /* Para evitar que las imágenes se desborden del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  background-color: #ffffff;
+  overflow: hidden;
+  /* Para evitar que las imágenes se desborden del contenedor */
+}
+/*==============================================*/
+/* Estilos para la sección de nuestros donantes */
+/*==============================================*/
+.our-donors {
+  padding: 80px 0; /* Ajusta el espacio interno según sea necesario */
+  background-color: #f8f8f8; /* Color de fondo para la sección */
 }
 
-#carouselExampleDark {
-    max-width: 100%;
-    max-height: 100%;
+.our-donors h2 {
+  font-size: 2.5rem;
+  color: #333; /* Color del texto del encabezado */
+  margin-bottom: 20px;
 }
 
-/* Estilos para el footer */
+.our-donors p {
+  font-size: 1.2rem;
+  color: #666; /* Color del texto del párrafo */
+  margin-bottom: 40px;
+}
+
+/* Estilos para el contenedor de la lista de imágenes */
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre las imágenes */
+}
+
+/* Estilos para cada elemento de la lista de imágenes */
+.image-item {
+  flex: 0 0 calc(33.333% - 20px); /* Ajusta el ancho de cada imagen según sea necesario */
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Bordes redondeados */
+}
+/*====================================================*/
+/*============Final de estilos donantes ==============*/
+/*====================================================*/
+
+/*====================================================*/
+/*==== Estilos para la sección de testimonios ========*/
+/*====================================================*/
+.testimonials {
+  padding: 80px 0;
+  background: linear-gradient(270deg, #052e4c, #020304);
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Estilos para el contenedor de testimonios */
+.testimonials .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos para el slider de testimonios */
+.testimonials .slick-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para cada testimonio */
+.testimonial-slider {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimonial-item p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.testimonial-item .author {
+  font-weight: bold;
+  color: #333;
+}
+/*====================================================*/
+/*=========== FINAL DE ESTILOS TESTIMONIOS ===========*/
+/*====================================================*/
+
+
+
+/*====================================================*/
+/*===== Estilos para la sección de contacto ==========*/
+/*====================================================*/
+.contact {
+  padding: 80px 0; /* Ajusta el espacio interno según sea necesario */
+  background: #fff; /* Fondo con gradiente */
+  color: #000000; /* Color del texto */
+  text-align: center; /* Centra el contenido */
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Estilos para el formulario de contacto */
+#contactForm {
+  max-width: 600px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario */
+}
+
+label {
+  display: block; /* Coloca las etiquetas en una nueva línea */
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #070606; /* Borde blanco */
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  color: #000000;
+}
+
+button {
+  background-color: #0c0909;
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a6acb3;
+  color: #052e4c;
+  border-color: #fff;
+}
+
+/* Estilos para el mensaje de validación */
+input:required:invalid + span,
+textarea:required:invalid + span {
+  display: block;
+  color: #ff5a5a;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Estilos para el mensaje de éxito */
+#successMessage {
+  color: #4caf50; /* Verde */
+  font-size: 1rem;
+  margin-top: 10px;
+}
+/*====================================================*/
+/*===== Final Estilos para la sección de contacto ====*/
+/*====================================================*/
+
+/*====================================================*/
+/* ================ Estilos para el footer ========== */
+/*====================================================*/
 footer {
-    background: linear-gradient(270deg, #052e4c, #020304);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+  background: linear-gradient(270deg, #052e4c, #020304);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 
 /* Estilos para la sección de redes sociales */
 footer .social-icons {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+  list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
 footer .social-icons li {
-    display: inline-block;
-    margin-right: 10px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 footer .social-icons a {
-    color: white;
-    font-size: 24px;
-    transition: color 0.3s ease;
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s ease;
 }
 
 footer .social-icons a:hover {
-    color: #00bcd4;
+  color: #00bcd4;
 }
 
 /* Estilos para la animación del texto de derechos de autor */
 footer p {
-    margin: 10px 0;
-    animation: fadeInUp 1s ease;
+  margin: 10px 0;
+  animation: fadeInUp 1s ease;
 }
+/*====================================================*/
+/* ========== Final Estilos para el footer ========== */
+/*====================================================*/
 
 /* Estilos para centrar el footer en pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    footer {
-        text-align: center;
-    }
-    .container {
-        flex-direction: column; /* Cambia la dirección a columna en pantallas más pequeñas */
-        align-items: center; /* Centra los elementos en pantallas más pequeñas */
-    }
+  footer {
+    text-align: center;
+  }
+  .container {
+    flex-direction: column; /* Cambia la dirección a columna en pantallas más pequeñas */
+    align-items: center; /* Centra los elementos en pantallas más pequeñas */
+  }
 
-    .about-content {
-        max-width: 100%; /* Opcional: Hace que el texto ocupe el ancho completo */
-        text-align: left; /* Alinea el texto a la izquierda en pantallas más pequeñas */
-    }
+  .about-content {
+    max-width: 100%; /* Opcional: Hace que el texto ocupe el ancho completo */
+    text-align: left; /* Alinea el texto a la izquierda en pantallas más pequeñas */
+  }
 
-    .slider-container {
-        height: auto; /* Ajusta la altura automáticamente en pantallas más pequeñas */
-    }
+  .slider-container {
+    height: auto; /* Ajusta la altura automáticamente en pantallas más pequeñas */
+  }
+  .counter i {
+    font-size: 2rem; /* Ajuste de tamaño para dispositivos más pequeños */
+  }
+  .our-donors .container {
+    width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
+  }
+  .testimonial-slider {
+    margin: 0 0 20px;
+}
 }
 
 /* Animación fadeInUp */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-
 /* Estilos para el menú de hamburguesa en pantallas pequeñas */
 @media screen and (max-width: 768px) {
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background: linear-gradient(270deg, #052e4c, #020304);
-        width: 100%;
-        text-align: center;
-        z-index: 10;
-    }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 40px;
+    top: 70px;
+    left: 0;
+    background: linear-gradient(270deg, #052e4c, #020304);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  }
 
-    .navbar-menu.show-menu {
-        display: flex;
-    }
+  .navbar-menu.show-menu {
+    display: flex;
+  }
 
-    .navbar-menu ul li {
-        margin: 15px 0; /* Espacio entre elementos de navegación */
-    }
+  .navbar-menu ul li {
+    margin: 10px 0; /* Espacio entre elementos de navegación */
+  }
 }
 
-
-
-
-/* prueba */
+@media (max-width: 576px) {
+  .testimonial-slider {
+    max-width: 100%; /* Ajustar completamente en pantallas aún más pequeñas */
+    margin: 0; /* Eliminar el margen en pantallas más pequeñas */
+  }
+}
