@@ -150,10 +150,10 @@ $imagenUsuario = $usuarioAutenticado ? $_SESSION['imgUsuario'] : '';
                 </li>
                 <?php if ($usuarioAutenticado): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-store"></i>Productos</a>
+                        <a class="nav-link" href="pages\ProductosUser.php"><i class="fas fa-store"></i>Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="nav-link" href="pages\carrito.php"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item">
                         <div class="user-info">
