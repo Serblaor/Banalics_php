@@ -149,24 +149,24 @@
         <div class="image-list">
             <!-- Imagen 1 -->
             <div class="image-item">
-                <img src="https://via.placeholder.com/150" alt="Donante 1">
+                <img src="https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png" alt="Donante 1">
             </div>
             <!-- Imagen 2 -->
             <div class="image-item">
-                <img src="https://via.placeholder.com/150" alt="Donante 2">
+                <img src="	https://seeklogo.com/images/N/nutresa-logo-92DA54AF37-seeklogo.com.png" alt="Donante 2">
             </div>
             <!-- Imagen 3 -->
             <div class="image-item">
-                <img src="https://via.placeholder.com/150" alt="Donante 3">
+                <img src="https://tgp-brands.com/wp-content/uploads/2019/09/logo-bimbo-768x617.jpg" alt="Donante 3">
             </div>
 			<div class="image-item">
-                <img src="https://via.placeholder.com/150" alt="Donante 4">
+                <img src="http://1.bp.blogspot.com/_4-qsRN2vXWY/Si0juxgauLI/AAAAAAAAAFA/XI16pQZbPtw/s320/logo%2520nuevo.jpg" alt="Donante 4">
             </div>
 			<div class="image-item">
-                <img src="https://via.placeholder.com/150" alt="Donante 5">
+                <img src="https://pluspng.com/img-png/almacenes-exito-logo-png-almacenes-exito-logo-400.jpg" alt="Donante 5">
             </div>
 			<div class="image-item">
-                <img src="https://via.placeholder.com/150" alt="Donante 6">
+                <img src="https://th.bing.com/th/id/R.e53cb5f151b15617eaad9eabd5090b2b?rik=vdRkfb8ZAKclnQ&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Donante 6">
             </div>
         </div>
     </div>
@@ -185,7 +185,7 @@
 				<div class="testimonial-slider">
 					<!-- Cada testimonio es un slide -->
 					<div class="testimonial-item">
-						<img src="app-assets/images/avatar.jpg" alt="Persona 1">
+						<img src="https://uploads-ssl.webflow.com/5d39841c4f1ba6511b23d83a/5e81ece85836db3eedc3f6c1_Screenshot%202019-10-16%20at%2016.16.54.png" alt="Persona 1">
 						<p>¡Increíble servicio! Banalics ha hecho una diferencia real en la comunidad. Su compromiso con
 							la
 							ayuda a quienes más lo necesitan es inspirador.</p>
@@ -194,7 +194,7 @@
 				</div>
 				<div class="testimonial-slider">
 					<div class="testimonial-item">
-						<img src="https://via.placeholder.com/150" alt="Persona 2">
+						<img src="https://th.bing.com/th/id/OIP.VfBLXAWcdPxF0cGiXaZgjAAAAA?rs=1&pid=ImgDetMain" alt="Persona 2">
 						<p>Estoy realmente agradecido por el impacto positivo que Banalics ha tenido en mi vida. Su
 							enfoque en
 							la seguridad alimentaria es crucial.</p>
@@ -203,7 +203,7 @@
 				</div>
 				<div class="testimonial-slider">
 					<div class="testimonial-item">
-						<img src="https://via.placeholder.com/150" alt="Persona 3">
+						<img src="https://th.bing.com/th/id/OIF.T4nfgOoruIs4ZTnGq5xTnA?rs=1&pid=ImgDetMain" alt="Persona 3">
 						<p>Banalics ha demostrado ser un líder en la lucha contra la desnutrición. Su dedicación es un
 							faro de
 							esperanza para muchos.</p>
@@ -212,7 +212,7 @@
 				</div>
 				<div class="testimonial-slider">
 					<div class="testimonial-item">
-						<img src="https://via.placeholder.com/150" alt="Persona 5">
+						<img src="https://www.soap-passion.com/media/cache/thumb_portrait/images/acteurs/acteur_2070_1412847343.jpg" alt="Persona 5">
 						<p>Gracias a Banalics, he visto un cambio significativo en mi vida. Su apoyo va más allá de la
 							entrega de
 							alimentos; ofrecen esperanza.</p>
