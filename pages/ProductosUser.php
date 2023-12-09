@@ -161,7 +161,7 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
         color: #fff;
     }
     
-    #productos {
+#productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -175,6 +175,7 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    background-color: #fff; /* Fondo blanco */
 }
 
 .producto:hover {
@@ -191,6 +192,7 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
 .producto h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #052e4c; /* Color azul oscuro */
 }
 
 .producto p {
@@ -199,8 +201,23 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
     margin-bottom: 15px;
 }
 
+.producto label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #052e4c; /* Color azul oscuro */
+}
+
+.producto input {
+    width: 60px; /* Ancho del campo de cantidad */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 .producto button {
-    background-color:#052e4c;
+    background-color: #052e4c;
     color: #fff;
     border: none;
     padding: 10px;
@@ -210,24 +227,24 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
 }
 
 .producto button:hover {
-    background-color: #052e4c;
+    background-color: #020304; /* Cambio de color al pasar el mouse */
 }
 /* Estilos para el formulario de filtrado */
-form {
+.filtro form {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-label {
+.filtro label {
     margin-right: 10px;
 }
 
-select {
+.filtro select {
     padding: 8px;
 }
 
-button {
+.filtro button {
     padding: 8px 12px;
     background-color: #052e4c;
     color: #fff;
@@ -346,7 +363,7 @@ button {
 <h2>Productos</h2>
 
 <!-- Filtros por tipo de producto -->
-<form method="get" action="ProductosUser.php">
+<form class="filtro"method="get" action="ProductosUser.php">
     <label for="tipo">Filtrar por tipo:</label>
     <select name="tipo" id="tipo">
         <option value="">Todos</option>
@@ -357,17 +374,24 @@ button {
     <button type="submit">Filtrar</button>
 </form>
 
+<!-- Modifica el formulario de productos -->
 <div id="productos">
-    <?php foreach ($productosPagina as $producto): ?>
+<?php foreach ($productosPagina as $producto): ?>
+    <form method="post" action="carrito.php">
+        <input type="hidden" name="idProducto" value="<?= $producto['idProducto']; ?>">
         <div class="producto">
             <img src="<?= $producto['img_Producto'] ?>" alt="<?= $producto['nombreProducto']; ?>">
             <h3><?= $producto['nombreProducto']; ?></h3>
             <p><?= $producto['descripcion_Producto']; ?></p>
             <p>Precio: $<?= $producto['precioProducto']; ?></p>
-            <button onclick="agregarAlCarrito(<?= $producto['idProducto']; ?>)">Agregar al carrito</button>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" value="1" min="1" required>
+            <button type="submit">Agregar al carrito</button>
         </div>
-    <?php endforeach; ?>
+    </form>
+<?php endforeach; ?>
 </div>
+
 
 <!-- Paginación -->
 <div class="paginacion">
@@ -381,57 +405,52 @@ button {
 <!-- Script para agregar al carrito -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function agregarAlCarrito(idProducto) {
-        // Obtener la cantidad del producto (puedes ajustar esto según tu lógica)
-        var cantidad = prompt("Ingrese la cantidad:", "1");
-        if (cantidad === null || cantidad === "") {
-            // El usuario canceló o no ingresó una cantidad, no se agrega al carrito
-            return;
-        }
-
-        // Mostrar SweetAlert de confirmación
-        Swal.fire({
-            title: '¿Estás seguro?',
-            text: '¿Quieres agregar el producto al carrito?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Sí, agregar al carrito',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // Crear una instancia de XMLHttpRequest
-                var xhttp = new XMLHttpRequest();
-
-                // Calcular el precio total
-                var precioTotal = cantidad * <?= $producto['precioProducto']; ?>;
-
-                // Configurar la solicitud POST hacia carrito.php (ajusta la URL según tu estructura)
-                xhttp.open("POST", "carrito.php", true);
-
-                // Configurar el encabezado para enviar datos de formulario
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-                // Manejar el evento de cambio de estado de la solicitud
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState == 4 && this.status == 200) {
-                        // La respuesta del servidor
-                        console.log(precioTotal);
-
-                        // Mostrar SweetAlert con el mensaje de confirmación
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Producto agregado al carrito',
-                            // text: this.responseText,
-                            confirmButtonText: 'OK'
-                        });
-                    }
-                };
-
-                // Enviar la solicitud con el ID del producto y la cantidad
-                xhttp.send("idProducto=" + idProducto + "&cantidad=" + cantidad + "&precioTotal=" + precioTotal);
-            }
-        });
+function agregarAlCarrito(idProducto) {
+    // Obtener la cantidad del producto (puedes ajustar esto según tu lógica)
+    var cantidad = prompt("Ingrese la cantidad:", "1");
+    if (cantidad === null || cantidad === "") {
+        // El usuario canceló o no ingresó una cantidad, no se agrega al carrito
+        return;
     }
+
+    // Mostrar SweetAlert de confirmación
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: '¿Quieres agregar el producto al carrito?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, agregar al carrito',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Crear una instancia de XMLHttpRequest
+            var xhttp = new XMLHttpRequest();
+
+            // Configurar la solicitud POST hacia carrito.php (ajusta la URL según tu estructura)
+            xhttp.open("POST", "carrito.php", true);
+
+            // Configurar el encabezado para enviar datos de formulario
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            // Manejar el evento de cambio de estado de la solicitud
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(cantidad);
+                    // Mostrar SweetAlert con el mensaje de confirmación
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Producto agregado al carrito',
+                        // text: this.responseText,
+                        confirmButtonText: 'OK'
+                    });
+                }
+            };
+
+            // Enviar la solicitud con el ID del producto y la cantidad
+            xhttp.send("idProducto=" + idProducto + "&cantidad=" + cantidad);
+        }
+    });
+}
 </script>
 
 <script>
