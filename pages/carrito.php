@@ -382,7 +382,6 @@ button:hover {
                     echo "<button class='eliminar' onclick='eliminarDelCarrito(" . $row['idCarrito'] . ")'>Eliminar</button>";
                     echo "</td>";
                     echo "</tr>";
-                    echo "<button class='comprar' onclick='comprar(" . $row['idProducto'] . ")'>Comprar</button>";
                 }
             } else {
                 echo "<tr><td colspan='6'>El carrito está vacío</td></tr>";

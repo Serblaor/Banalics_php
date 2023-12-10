@@ -332,7 +332,7 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
                 </li>
                 <?php if ($usuarioAutenticado): ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages\ProductosUser.php"><i class="fas fa-store"></i>Productos</a>
+                        <a class="nav-link" href="ProductosUser.php"><i class="fas fa-store"></i>Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="carrito.php"><i class="fas fa-shopping-cart"></i></a>
@@ -376,20 +376,20 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
 
 <!-- Modifica el formulario de productos -->
 <div id="productos">
-<?php foreach ($productosPagina as $producto): ?>
-    <form method="post" action="carrito.php">
-        <input type="hidden" name="idProducto" value="<?= $producto['idProducto']; ?>">
-        <div class="producto">
-            <img src="<?= $producto['img_Producto'] ?>" alt="<?= $producto['nombreProducto']; ?>">
-            <h3><?= $producto['nombreProducto']; ?></h3>
-            <p><?= $producto['descripcion_Producto']; ?></p>
-            <p>Precio: $<?= $producto['precioProducto']; ?></p>
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" name="cantidad" value="1" min="1" required>
-            <button type="submit">Agregar al carrito</button>
-        </div>
-    </form>
-<?php endforeach; ?>
+    <?php foreach ($productosPagina as $producto): ?>
+        <form method="post" action="carrito.php" onsubmit="return confirmarEnvio()">
+            <input type="hidden" name="idProducto" value="<?= $producto['idProducto']; ?>">
+            <div class="producto">
+                <img src="<?= $producto['img_Producto'] ?>" alt="<?= $producto['nombreProducto']; ?>">
+                <h3><?= $producto['nombreProducto']; ?></h3>
+                <p><?= $producto['descripcion_Producto']; ?></p>
+                <p>Precio: $<?= $producto['precioProducto']; ?></p>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" name="cantidad" value="1" min="1" required>
+                <button type="submit">Agregar al carrito</button>
+            </div>
+        </form>
+    <?php endforeach; ?>
 </div>
 
 
@@ -405,6 +405,20 @@ $productosPagina = array_slice($productosFiltrados, $inicio, $productosPorPagina
 <!-- Script para agregar al carrito -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+    function confirmarEnvio() {
+        // Muestra la alerta de SweetAlert
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: '¿Quieres agregar el producto al carrito?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, agregar al carrito',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            // Devuelve true si el usuario hace clic en "Sí", de lo contrario, devuelve false
+            return result.isConfirmed;
+        });
+    }
 function agregarAlCarrito(idProducto) {
     // Obtener la cantidad del producto (puedes ajustar esto según tu lógica)
     var cantidad = prompt("Ingrese la cantidad:", "1");
