@@ -9,7 +9,7 @@
     <style>
         /* Agrega un estilo específico para el contenido de la página */
         .app-content {
-           height: 88vh;
+           height: auto;
             /* Ajusta según sea necesario */
         }
 

@@ -11,16 +11,13 @@
 
           <li class=" nav-item"><a href="welcome.php"><i class="icon-home3"></i><span class="menu-title">Tablero</span></a>
           </li>
-          <li class=" nav-item"><a href="#"><i class="icon-gears"></i><span class="menu-title">Configuración</span></a>
-          </li>
-          <li class=" nav-item"><a href="#"><i class="icon-user-secret"></i><span  class="menu-title">Gestion de usuarios</span></a>
+          <li class=" nav-item"><a href="#"><i class="icon-user-secret"></i><span  class="menu-title">Gestión de usuarios</span></a>
             <ul class="menu-content">
               <li><a href="Usuarios.php" class="menu-item">Usuarios</a></li>
             </ul>
           </li>
           <li class=" nav-item"><a href="#"><i class="icon-mobile2"></i><span class="menu-title">Empresas</span></a>
             <ul class="menu-content">
-              <li><a href="#" class="menu-item">Donantes</a></li>
               <li><a href="Empresas.php" class="menu-item">Lista de Empresas</a></li>
             </ul>
           </li>
@@ -36,20 +33,8 @@
           </li>
           <li class=" nav-item"><a href="#"><i class="icon-ios-cart-outline"></i><span class="menu-title">Compras</span></a>
             <ul class="menu-content">
-              <li><a href="#" class="menu-item">Realizar compras</a></li>
               <li><a href="#" class="menu-item">Lista de compras</a></li>
             </ul>
-          </li>
-
-          <li class=" navigation-header"><span>Informes</span>
-          </li>
-          <li class=" nav-item"><a href="#"><i class="icon-file-text2"></i><span class="menu-title">Reportes </span></a>
-          </li>
-          <li class=" nav-item"><a href="#"><i class="icon-stats-dots"></i><span  class="menu-title">Gráficas</span></a>
-          </li>
-          <li class=" navigation-header"><span>Soporte</span>
-          </li>
-          <li class=" nav-item"><a href="#"><i class="icon-database2"></i><span  class="menu-title">Backup</span></a>
           </li>
         </ul>
       </div>

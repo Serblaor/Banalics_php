@@ -30,7 +30,7 @@ function getEmpresas()
     <title>Document</title>
     <style>
         .app-content{
-            height: 88vh;
+            height: auto;
         }
     </style>
 </head>

@@ -1,8 +1,16 @@
 <!-- ============== | head | =================-->
 <?php include "layouts/head.php"; ?>
 <!--==========================================-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <!-- =========== | contenido | ===============-->
 
-<!-- =========== | contenido | ===============-->
 <div class="app-content content container-fluid">
     <div class="content-wrapper">
         <div class="content-header row">
@@ -96,6 +104,16 @@
     </div>
 </div>
 <!--==========================================-->
+
+
+<script>
+    function editarProducto(idProducto) {
+    window.location.href = 'editar_producto.php?idProducto=' + idProducto;
+}
+</script>
+</body>
+</html>
+
 
 <!--==========================================-->
 
