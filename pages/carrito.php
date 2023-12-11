@@ -1,20 +1,13 @@
-<!-- carrito.php -->
 <?php
 include_once '../config/Conexion.php';
-// Inicia la sesión
 session_start();
 
-// Verifica si el usuario está autenticado
 $usuarioAutenticado = isset($_SESSION['idUsuario']);
-
-// Obtén el nombre de usuario y la imagen si está autenticado
 $nombreUsuario = $usuarioAutenticado ? $_SESSION['nombresUsuario'] : '';
 $imagenUsuario = $usuarioAutenticado ? $_SESSION['imgUsuario'] : '';
 
-// Función para obtener el precio del producto desde la base de datos (ajusta según tu estructura)
 function obtenerPrecioProducto($idProducto)
 {
-    // Realiza la consulta para obtener el precio del producto según su ID
     $conexion = new Conexion();
     $conn = $conexion->ConectarDB();
 
@@ -30,47 +23,33 @@ function obtenerPrecioProducto($idProducto)
     return $precioProducto;
 }
 
-// Verifica si se recibió el ID del producto y la cantidad
 if (isset($_POST['idProducto']) && isset($_POST['cantidad'])) {
     $idProducto = $_POST['idProducto'];
     $cantidad = $_POST['cantidad'];
 
-    // Verifica si el ID del producto no está vacío y es un número entero
     if (is_numeric($idProducto) && $idProducto > 0) {
-        // Obtén el precio del producto desde la base de datos
         $precioProducto = obtenerPrecioProducto($idProducto);
-
-        // Calcula el precio total
         $precioTotal = $cantidad * $precioProducto;
 
         if (!isset($_SESSION['carrito'])) {
             $_SESSION['carrito'] = [];
         }
 
-        // Verifica si el producto ya está en el carrito
         if (!in_array($idProducto, $_SESSION['carrito'])) {
             $_SESSION['carrito'][] = $idProducto;
-            // echo "Producto agregado al carrito con ID: " . $idProducto;
 
-            // Conecta con la base de datos
             include_once '../config/Conexion.php';
             $conexion = new Conexion();
             $conn = $conexion->ConectarDB();
 
-            // Prepara la consulta SQL para insertar productos en la tabla carrito
             $stmt = $conn->prepare("INSERT INTO carrito (idUsuario, idProducto, cantidad, precioTotal) VALUES (?, ?, ?, ?)");
-
-            // Obtiene el ID de usuario de la sesión (ajusta según tu lógica de autenticación)
             $idUsuario = isset($_SESSION['idUsuario']) ? $_SESSION['idUsuario'] : null;
 
-            // Itera sobre los productos en el carrito y realiza la inserción en la base de datos
             foreach ($_SESSION['carrito'] as $idProducto) {
-                // Simplemente, por cada producto, inserta un registro en la tabla carrito con los valores correspondientes
                 $stmt->bind_param("iiid", $idUsuario, $idProducto, $cantidad, $precioTotal);
                 $stmt->execute();
             }
 
-            // Cierra la conexión y libera los recursos
             $stmt->close();
             $conn->close();
         } else {
@@ -82,15 +61,7 @@ if (isset($_POST['idProducto']) && isset($_POST['cantidad'])) {
 } else {
     echo "";
 }
-
-
-// Limpia el carrito después de la inserción en la base de datos (puedes ajustar según tus necesidades)
-unset($_SESSION['carrito']);
-
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -106,6 +77,7 @@ unset($_SESSION['carrito']);
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
     <style>
         /* Estilos generales para la barra de navegación */
         .navbar {
@@ -194,90 +166,98 @@ unset($_SESSION['carrito']);
         }
 
         .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-h2 {
-    text-align: center;
-    color: #052e4c; /* Color azul oscuro */
-}
+        h2 {
+            text-align: center;
+            color: #052e4c;
+            /* Color azul oscuro */
+        }
 
-/* Estilos para la tabla */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    overflow-x: auto;
-}
+        /* Estilos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
-}
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            /* Línea divisoria entre filas */
+        }
 
-th {
-    background-color: #052e4c;
-    color: #fff;
-}
+        th {
+            background-color: #052e4c;
+            color: #fff;
+        }
 
-/* Estilos para filas impares */
-tbody tr:nth-child(odd) {
-    background-color: #f9f9f9;
-}
+        /* Estilos para filas impares */
+        tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
 
 
-button {
-    background-color: #052e4c;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+        button {
+            background-color: #052e4c;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-button:hover {
-    background-color: #020304; /* Cambio de color al pasar el mouse */
-}
+        button:hover {
+            background-color: #020304;
+            /* Cambio de color al pasar el mouse */
+        }
 
-/* Estilos responsive */
-@media screen and (max-width: 600px) {
-    table {
-        overflow-x: auto;
-    }
+        /* Estilos responsive */
+        @media screen and (max-width: 600px) {
+            table {
+                overflow-x: auto;
+            }
 
-    th, td {
-        display: block;
-        width: 100%;
-    }
+            th,
+            td {
+                display: block;
+                width: 100%;
+            }
 
-    th, td {
-        text-align: left;
-        padding: 8px;
-        box-sizing: border-box;
-    }
+            th,
+            td {
+                text-align: left;
+                padding: 8px;
+                box-sizing: border-box;
+            }
 
-    tbody tr {
-        display: block;
-        margin-bottom: 10px;
-        border-bottom: 1px solid #ddd; /* Línea divisoria entre filas */
-    }
+            tbody tr {
+                display: block;
+                margin-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+                /* Línea divisoria entre filas */
+            }
 
-    tbody tr:last-child {
-        border-bottom: none; /* No hay línea divisoria después de la última fila */
-    }
+            tbody tr:last-child {
+                border-bottom: none;
+                /* No hay línea divisoria después de la última fila */
+            }
 
-    td:before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: inline-block;
-        width: 50%;
-        margin-bottom: 5px;
-    }
-}
+            td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                display: inline-block;
+                width: 50%;
+                margin-bottom: 5px;
+            }
+        }
 
         @media screen and (max-width: 768px) {
             .navbar-menu {
@@ -302,7 +282,6 @@ button:hover {
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -345,7 +324,6 @@ button:hover {
     <!-- Mostrar lista de productos en el carrito -->
     <h2>Carrito de Compras</h2>
 
-
     <table>
         <thead>
             <tr>
@@ -359,51 +337,50 @@ button:hover {
         </thead>
         <tbody>
             <?php
-            // Realiza la lógica para obtener información del carrito desde la base de datos
             include_once '../config/Conexion.php';
             $conexion = new Conexion();
             $conn = $conexion->ConectarDB();
-
-            // Sustituye 'tu_tabla_carrito' con el nombre real de tu tabla de carrito
             $sql = "SELECT c.idProducto, p.nombreProducto, c.cantidad, c.precioTotal, c.fechaAgregado, c.idCarrito
-        FROM carrito c
-        INNER JOIN producto p ON c.idProducto = p.idProducto";
+                    FROM carrito c
+                    INNER JOIN producto p ON c.idProducto = p.idProducto";
             $result = $conn->query($sql);
+
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $row['idProducto'] . "</td>";
-                    echo "<td>" . $row['nombreProducto'] . "</td>";
-                    echo "<td>" . $row['cantidad'] . "</td>";
-                    echo "<td>$" . $row['precioTotal'] . "</td>";
-                    echo "<td>" . $row['fechaAgregado'] . "</td>";
+                    echo "<tr data-id-carrito='" . $row['idCarrito'] . "'>";
+                    echo "<td class='id-producto'>" . $row['idProducto'] . "</td>";
+                    echo "<td class='nombre-producto'>" . $row['nombreProducto'] . "</td>";
+                    echo "<td class='cantidad'>" . $row['cantidad'] . "</td>";
+                    echo "<td class='precio-total'>$" . $row['precioTotal'] . "</td>";
+                    echo "<td class='fecha-agregado'>" . $row['fechaAgregado'] . "</td>";
                     echo "<td>";
                     echo "<button class='eliminar' onclick='eliminarDelCarrito(" . $row['idCarrito'] . ")'>Eliminar</button>";
                     echo "</td>";
                     echo "</tr>";
                 }
+
+                // Botón global para realizar la compra
+                echo "<tr><td colspan='5'></td>";
+                echo "<td><button onclick='finalizarCompra()' class='btn btn-primary'>Comprar</button></td>";
+                echo "</tr>";
             } else {
                 echo "<tr><td colspan='6'>El carrito está vacío</td></tr>";
             }
 
-            // Cierra la conexión
             $conn->close();
             ?>
+
+
         </tbody>
 
 
-        <!-- Script para ajuste de cantidad y eliminación de productos -->
         <script>
             function ajustarCantidad(idProducto, nuevaCantidad) {
-                // Lógica para ajustar la cantidad de productos en el carrito
                 console.log("Cantidad de producto ajustada - ID: " + idProducto + ", Nueva Cantidad: " + nuevaCantidad);
-
-                // Puedes realizar más acciones aquí, como actualizar la interfaz de usuario
             }
 
             function eliminarDelCarrito(idCarrito) {
-                // Mostrar SweetAlert para confirmar la eliminación
                 Swal.fire({
                     title: '¿Estás seguro?',
                     text: 'Esta acción eliminará el producto del carrito.',
@@ -415,31 +392,34 @@ button:hover {
                     cancelButtonText: 'Cancelar'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        // Realizar acciones de eliminación aquí
-                        console.log("Producto eliminado del carrito - ID: " + idCarrito);
-
-                        // Puedes realizar una solicitud al servidor para eliminar el producto del carrito
                         var xhttp = new XMLHttpRequest();
                         xhttp.open("POST", "eliminar_del_carrito.php", true);
                         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                         xhttp.onreadystatechange = function () {
                             if (this.readyState == 4 && this.status == 200) {
-                                // Lógica adicional después de eliminar el producto (si es necesario)
-                                var response = JSON.parse(this.responseText);
-                                console.log("Respuesta del servidor: " + JSON.stringify(response));
+                                try {
+                                    var response = JSON.parse(this.responseText);
 
-                                // Mostrar SweetAlert con el mensaje del servidor
-                                Swal.fire({
-                                    icon: response.success ? 'success' : 'error',
-                                    title: response.message,
-                                    confirmButtonText: 'OK'
-                                });
+                                    Swal.fire({
+                                        icon: response.success ? 'success' : 'error',
+                                        title: response.message,
+                                        showConfirmButton: true,
+                                        timer: 4500
+                                    });
 
-                                // Actualizar la interfaz o realizar acciones adicionales según sea necesario
-                                if (response.success) {
-                                    // Por ejemplo, recargar la página o actualizar la lista de productos en el carrito
-                                    location.reload();  // Esto recarga la página
-                                    // Actualizar la interfaz según tu lógica
+                                    if (response.success) {
+                                        location.reload();
+                                    }
+                                } catch (e) {
+                                    console.log("Respuesta del servidor no es JSON. Contenido: " + this.responseText);
+
+                                    Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error en la respuesta del servidor',
+                                        text: 'Hubo un error al procesar la solicitud. Por favor, inténtalo de nuevo.',
+                                        showConfirmButton: true,
+                                        timer: 4500
+                                    });
                                 }
                             }
                         };
@@ -447,16 +427,10 @@ button:hover {
                     }
                 });
             }
-
-
-
             function finalizarCompra() {
-                // Lógica para procesar el pago y finalizar la compra (integramos con PayPal aquí)
-                console.log("Compra finalizada");
-
-                // Puedes realizar más acciones aquí, como redirigir a la página de pago
             }
         </script>
+
         <script>
             const btnMenu = document.getElementById('btn-menu');
             const navbarMenu = document.querySelector('.navbar-menu');
@@ -467,7 +441,6 @@ button:hover {
                 }
             });
         </script>
-
 </body>
 
 </html>
