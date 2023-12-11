@@ -9,7 +9,7 @@
     <style>
         /* Agrega un estilo específico para el contenido de la página */
         .app-content {
-            padding: 10px;
+           height: 88vh;
             /* Ajusta según sea necesario */
         }
 
@@ -42,6 +42,7 @@
         /* Ajusta los estilos de los botones de acciones */
         .btn {
             margin-right: 5px;
+            margin-bottom: 3px;
             /* Ajusta según sea necesario */
         }
 
@@ -113,6 +114,7 @@
     ?>
     <div class="app-content content container-fluid">
         <br />
+        <h2>Lista de Ususarios</h2>
         <br />
         <a href="crear_usuario.php" class="btn btn-primary ">Crear Nuevo Usuario</a>
         <br />

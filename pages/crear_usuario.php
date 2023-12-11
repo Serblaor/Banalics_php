@@ -181,7 +181,7 @@ return true;
 
                     </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 mx-auto text-center">
                     <label for="idEmpresa" class="form-label">Empresa:</label>
                     <select class="form-select" id="idEmpresa" name="idEmpresa" required>
                         <option value="1">ALIMENTOS SAS</option>
@@ -197,7 +197,7 @@ return true;
                     </select>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 mx-auto text-center" >
                 <button type="submit" class="btn btn-primary">Crear Usuario</button>
                 <a href="Usuarios.php" class="btn btn-secondary">Volver a la Lista de Usuarios</a>
             </div>

@@ -28,6 +28,11 @@ function getEmpresas()
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .app-content{
+            height: 88vh;
+        }
+    </style>
 </head>
 <body>
     

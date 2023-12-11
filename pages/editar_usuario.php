@@ -157,8 +157,7 @@ button:hover {
 
 <body>
     <div class="app-content content container-fluid">
-        <br />
-        <br />
+    <div class="content-wrapper">
         <h2>Editar Usuario</h2>
         <form method="POST" action="">
             <!-- Agrega campos del formulario según sea necesario -->
@@ -221,7 +220,9 @@ button:hover {
                     </select>
                         <br />
             <button type="submit">Guardar Cambios</button>
+            <a href="Usuarios.php" class="btn btn-secondary">Volver a la Lista de Usuarios</a>
         </form>
+    </div>
     </div>
 </body>
 
